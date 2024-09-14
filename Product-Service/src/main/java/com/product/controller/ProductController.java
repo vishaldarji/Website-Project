@@ -3,10 +3,11 @@ package com.product.controller;
 import com.product.entity.Product;
 import com.product.serviceImplData.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 public class ProductController {
@@ -20,5 +21,10 @@ public class ProductController {
 {
     service.createProduct(product);
     return "Created";
+    }
+
+    @GetMapping("/{id}")
+    public void getById(Integer id){
+
     }
 }
